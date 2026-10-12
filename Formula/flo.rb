@@ -2,6 +2,7 @@ class Flo < Formula
   desc "Streams, queues, KV, workflows and processing in one runtime"
   homepage "https://github.com/floruntime/flo"
   version "0.1.0-dev.11"
+  license "Apache-2.0"
 
   on_macos do
     on_arm do
