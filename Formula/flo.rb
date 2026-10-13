@@ -4,6 +4,8 @@ class Flo < Formula
   version "0.1.0-dev.12"
   license "Apache-2.0"
 
+  depends_on macos: :sequoia
+
   on_macos do
     on_arm do
       url "https://github.com/floruntime/flo/releases/download/v0.1.0-dev.12/flo-aarch64-macos.tar.gz"
