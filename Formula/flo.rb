@@ -29,7 +29,29 @@ class Flo < Formula
   end
 
   def install
+    check_cpu_floor if OS.linux?
     bin.install "flo"
+  end
+
+  # The binaries need hardware CRC32C: x86-64-v2, or ARMv8 with CRC. Below that
+  # flo stops with an illegal instruction, so refuse here. The same check is in
+  # flo's scripts/install.sh and packaging/scripts/preinstall.sh.
+  def check_cpu_floor
+    flags = Hardware::CPU.flags || []
+    needed, own_flag = if Hardware::CPU.arm?
+      [%w[crc32], "fp"]
+    else
+      [%w[cx16 lahf_lm pni popcnt sse4_1 sse4_2 ssse3], "fpu"]
+    end
+    # Empty, or another arch's line (under emulation cpuinfo describes the host).
+    unless flags.include?(own_flag)
+      opoo "Could not read this CPU's flags; flo needs an x86-64-v2 CPU or ARMv8 with CRC."
+      return
+    end
+    missing = needed - flags
+    return if missing.empty?
+
+    odie "flo needs an x86-64-v2 CPU or ARMv8 with CRC; this CPU lacks: #{missing.join(" ")}."
   end
 
   def caveats
