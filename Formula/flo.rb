@@ -1,30 +1,30 @@
 class Flo < Formula
   desc "Streams, queues, KV, workflows and processing in one runtime"
   homepage "https://github.com/floruntime/flo"
-  version "0.1.0-dev.22"
+  version "0.1.0-dev.23"
   license "Apache-2.0"
 
   depends_on macos: :sequoia
 
   on_macos do
     on_arm do
-      url "https://github.com/floruntime/flo/releases/download/v0.1.0-dev.22/flo-aarch64-macos.tar.gz"
-      sha256 "af1fa6fbb84b705c8dc5ccfdcbc89065dad266d496e89d7b15ce28af21e5f1c0"
+      url "https://github.com/floruntime/flo/releases/download/v0.1.0-dev.23/flo-aarch64-macos.tar.gz"
+      sha256 "fcfef398dc9b6c5dabe4f3ba4b3ba3c6cd74cbf5f907bd455b7bd5ba68ba6be9"
     end
     on_intel do
-      url "https://github.com/floruntime/flo/releases/download/v0.1.0-dev.22/flo-x86_64-macos.tar.gz"
-      sha256 "1b54769c6b5f4cda82569689917e614a05e295947b9abdcbd5f8490617920440"
+      url "https://github.com/floruntime/flo/releases/download/v0.1.0-dev.23/flo-x86_64-macos.tar.gz"
+      sha256 "e87e7b14db4c60365bbf37fc136ab00c4fd4c0a6bf2d2d7baf412f1f425870c4"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/floruntime/flo/releases/download/v0.1.0-dev.22/flo-aarch64-linux.tar.gz"
-      sha256 "9b6f729925c842b5644038e34076e604309a96d4ea135bc9b043c1400558eb31"
+      url "https://github.com/floruntime/flo/releases/download/v0.1.0-dev.23/flo-aarch64-linux.tar.gz"
+      sha256 "cd08594e7878c73a730039feecf9b94cbd3a26a7929a70d6c59c99f7631b0350"
     end
     on_intel do
-      url "https://github.com/floruntime/flo/releases/download/v0.1.0-dev.22/flo-x86_64-linux.tar.gz"
-      sha256 "87aedd22980892db758ed72bb10134f3ef7b3cb373e718c57650692c6006b3ed"
+      url "https://github.com/floruntime/flo/releases/download/v0.1.0-dev.23/flo-x86_64-linux.tar.gz"
+      sha256 "9621bd025ca975432cdc79137fa1fa8c42dd8d7f5b44a38954d4ce128f697ca7"
     end
   end
 
